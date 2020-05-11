@@ -113,6 +113,8 @@ local drone_fuel = util.copy(data.raw.fluid["light-oil"])
 drone_fuel.name = tdf.fuel_name
 drone_fuel.max_temperature = 1000
 drone_fuel.subgroup = "drone-fuel"
+drone_fuel.base_color = {r=1, g = 0, b = 1}
+drone_fuel.icon = tdf.path("entities/drone-fuel-icon.png")
 -- drone_fuel.group = "intermediates"
 
 local make_fuel_recipe = function(name, source, quality, category, amount)

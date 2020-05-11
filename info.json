@@ -1,6 +1,6 @@
 {
     "name": "Transport_Drones_Fuel",
-    "version": "0.6.1",
+    "version": "0.6.2",
     "title": "Transport Drones Fuel",
     "author": "tubs",
     "contact": "",
@@ -9,5 +9,6 @@
     "dependencies": ["base >= 0.18.22", 
         "Transport_Drones >= 0.6.0"
     ],
-    "factorio_version": "0.18"
+    "factorio_version": "0.18",
+    "package": {"no_git_push": true}
   }

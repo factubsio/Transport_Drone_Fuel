@@ -5,7 +5,7 @@ Date: Date: 2020-05-12
     - Unlock recipes when adding to an existing save (where Transport Drone System has already been researched)
 ---------------------------------------------------------------------------------------------------
 Version: 0.6.2
-Date: Date: 2020-05-12
+Date: 2020-05-11
   Changes:
     - Add unique icon for drone fuel
     - Tweak drone fuel base colour

@@ -25,7 +25,7 @@ local drone_fuel_subgroup =
 
 local drone_refinery = util.copy(stone_furnace)
 drone_refinery.name = name
--- drone_refinery.energy_usage = :14
+drone_refinery.energy_usage = "270KW"
 drone_refinery.localised_name = {name}
 drone_refinery.type = "assembling-machine"
 drone_refinery.crafting_categories = {"drone-fuel-refining"}
@@ -33,31 +33,31 @@ drone_refinery.rotatable = false
 drone_refinery.next_upgrade = nil
 drone_refinery.fast_replaceable_group = nil
 drone_refinery.selection_box = {{-1, -1}, {1, 1}}
+
+local mkdir = function(index)
+  return {
+      layers  = {
+        {
+          filename = tdf.path("entities/transport_refinery/drone-refinery-base-000" .. tostring(index) .. ".png"),
+          frame_count = 1,
+          size = 256,
+          scale = .5,
+        },
+        {
+          filename = tdf.path("entities/transport_refinery/drone-refinery-shadow-000" .. tostring(index) .. ".png"),
+          frame_count = 1,
+          size = 256,
+          scale = .5,
+          draw_as_shadow = true,
+        }
+      }
+  }
+end
 drone_refinery.animation = {
-    north = {
-        filename = tdf.path("entities/transport_refinery/drone_refinery0001.png"),
-        frame_count = 1,
-        size = 256,
-        scale = .5,
-    },
-    east = {
-        filename = tdf.path("entities/transport_refinery/drone_refinery0002.png"),
-        frame_count = 1,
-        size = 256,
-        scale = .5,
-    },
-    south = {
-        filename = tdf.path("entities/transport_refinery/drone_refinery0003.png"),
-        frame_count = 1,
-        size = 256,
-        scale = .5,
-    },
-    west = {
-        filename = tdf.path("entities/transport_refinery/drone_refinery0004.png"),
-        frame_count = 1,
-        size = 256,
-        scale = .5,
-    },
+    north = mkdir(1),
+    east = mkdir(2),
+    south = mkdir(3),
+    west = mkdir(4),
 }
 drone_refinery.fluid_boxes =
 {
@@ -73,6 +73,8 @@ drone_refinery.fluid_boxes =
 }
 drone_refinery.placeable_by = { item = name, count = 1}
 drone_refinery.minable.result = name
+drone_refinery.icon = tdf.path("entities/transport_refinery/refinery-icon.png")
+drone_refinery.icon_size = 256
 
 local drone_refinery_items =
 {
@@ -80,8 +82,8 @@ local drone_refinery_items =
     type = "item",
     name = name,
     localised_name = {name},
-    icon = stone_furnace.icon,
-    icon_size = stone_furnace.icon_size,
+    icon = drone_refinery.icon,
+    icon_size = drone_refinery.icon_size,
     flags = {},
     subgroup = "transport-drones",
     order = "e-a-c",
@@ -92,8 +94,8 @@ local drone_refinery_items =
     type = "recipe",
     name = name,
     localised_name = {name},
-    icon = stone_furnace.icon,
-    icon_size = stone_furnace.icon_size,
+    icon = drone_refinery.icon,
+    icon_size = drone_refinery.icon_size,
     --category = "transport",
     enabled = false,
     ingredients =

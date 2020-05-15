@@ -1,8 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.6.4
-Date: Date: 2020-05-13
+Date: 2020-05-15
   Changes:
     - Apply locale fix for drone-fuel fluid (Thanks Mootykins)
+    - Check for bobselectronics bcb and use them in early game prototype.
 ---------------------------------------------------------------------------------------------------
 Version: 0.6.3
 Date: 2020-05-13

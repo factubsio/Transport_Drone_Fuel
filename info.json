@@ -7,7 +7,8 @@
     "homepage": "",
     "description": "Change transport drones to use refined fuel rather than petrogas",
     "dependencies": ["base >= 0.18.22", 
-        "Transport_Drones >= 0.6.0"
+        "Transport_Drones >= 0.6.0",
+        "?bobelectronics"
     ],
     "factorio_version": "0.18",
     "package": {"no_git_push": true}
